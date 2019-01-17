@@ -1,0 +1,19 @@
+"company"	"website"	"headquarters"	"size"	"founded"	"type"	"industry"	"revenue"	"run_time"
+"1stdibs.com"	"www.1stdibs.com"	"New York, NY"	"201 to 500 employees"	2001	"private"	"Internet"	"$25 to $50 million (USD) per year"	2019-01-17 16:09:01
+"Amazon"	"www.amazon.jobs"	"Seattle, WA"	"10000+ employees"	1994	"public"	"Internet"	"$10+ billion (USD) per year"	2019-01-17 16:09:01
+"Colgate-Palmolive"	"www.colgatepalmolive.com"	"New York, NY"	"10000+ employees"	1806	"public"	"Consumer Products Manufacturing"	"$10+ billion (USD) per year"	2019-01-17 16:09:01
+"Condé Nast"	"www.condenast.co.uk"	"London, England (UK)"	"501 to 1000 employees"	1909	"public"	"Publishing"	"Unknown / Non-Applicable"	2019-01-17 16:09:01
+"Criteo"	"www.criteo.com"	"Paris (France)"	"1001 to 5000 employees"	2005	"public"	"Internet"	"$2 to $5 billion (USD) per year"	2019-01-17 16:09:01
+"Digital Intelligence Systems, LLC"	"www.disys.com"	"Mc Lean, VA"	"1001 to 5000 employees"	1994	"private"	"IT Services"	"$100 to $500 million (USD) per year"	2019-01-17 16:09:01
+"HotelTonight"	"www.hoteltonight.com"	"San Francisco, CA"	"201 to 500 employees"	2010	"private"	"Hotels, Motels, & Resorts"	"Unknown / Non-Applicable"	2019-01-17 16:09:01
+"Macquarie Group"	"www.macquarie.com"	"Sydney (Australia)"	"10000+ employees"	1969	"public"	"Investment Banking & Asset Management"	"$5 to $10 billion (USD) per year"	2019-01-17 16:09:01
+"Morgan Stanley"	"www.morganstanley.com"	"New York, NY"	"10000+ employees"	1935	"public"	"Investment Banking & Asset Management"	"$10+ billion (USD) per year"	2019-01-17 16:09:01
+"Morgan Stanley USA"	"www.morganstanley.com"	"New York, NY"	"10000+ employees"	1935	"public"	"Investment Banking & Asset Management"	"$10+ billion (USD) per year"	2019-01-17 16:09:01
+"North Highland"	"www.northhighland.com"	"Atlanta, GA"	"1001 to 5000 employees"	1992	"private"	"Consulting"	"$100 to $500 million (USD) per year"	2019-01-17 16:09:01
+"Phreesia"	"www.phreesia.com"	"New York, NY"	"201 to 500 employees"	2005	"private"	"Health Care Services & Hospitals"	"Unknown / Non-Applicable"	2019-01-17 16:09:01
+"SeatGeek"	"www.seatgeek.com"	"New York, NY"	"201 to 500 employees"	2009	"private"	"Internet"	"Unknown / Non-Applicable"	2019-01-17 16:09:01
+"ThoughtWorks"	"www.thoughtworks.com"	"Chicago, IL"	"1001 to 5000 employees"	1993	"private"	"IT Services"	"$100 to $500 million (USD) per year"	2019-01-17 16:09:01
+"TradingScreen"	"www.tradingscreen.com"	"New York, NY"	"51 to 200 employees"	1999	"private"	"Brokerage Services"	"Unknown / Non-Applicable"	2019-01-17 16:09:01
+"Two Sigma"	"www.twosigma.com"	"New York, NY"	"1001 to 5000 employees"	2001	"private"	"Investment Banking & Asset Management"	"Unknown / Non-Applicable"	2019-01-17 16:09:01
+"Walt Disney Company"	"www.disney.com"	"Burbank, CA"	"10000+ employees"	1923	"public"	"Motion Picture Production & Distribution"	"$10+ billion (USD) per year"	2019-01-17 16:09:01
+"WeWork"	"www.wework.com"	"New York, NY"	"1001 to 5000 employees"	2010	"private"	"Membership Organizations"	"Unknown / Non-Applicable"	2019-01-17 16:09:01
