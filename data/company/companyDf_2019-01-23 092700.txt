@@ -1,0 +1,21 @@
+"company"	"website"	"headquarters"	"size"	"founded"	"type"	"industry"	"revenue"	"run_time"
+"AbleTo"	"www.ableto.com"	"New York, NY"	"51 to 200 employees"	2008	"private"	"Health Care Services & Hospitals"	"$50 to $100 million (USD) per year"	2019-01-23 09:27:00
+"adMarketplace"	"www.admarketplace.com"	"New York, NY"	"51 to 200 employees"	2000	"private"	"Advertising & Marketing"	"Unknown / Non-Applicable"	2019-01-23 09:27:00
+"Allianz Global Investors"	"www.allianzgi.com"	"London, England (UK)"	"1001 to 5000 employees"	2012	"Subsidiary or Business Segment"	"Investment Banking & Asset Management"	"Unknown / Non-Applicable"	2019-01-23 09:27:00
+"Axtria"	"https://www.axtria.com"	"Berkeley Heights, NJ"	"501 to 1000 employees"	2010	"private"	"Consulting"	"$50 to $100 million (USD)"	2019-01-23 09:27:00
+"Caresoft"	"www.carahsoft.com"	"Reston, VA"	"501 to 1000 employees"	2004	"private"	"Computer Hardware & Software"	"$2 to $5 billion (USD) per year"	2019-01-23 09:27:00
+"Clarity Insights"	"www.clarityinsights.com"	"Chicago, IL"	"201 to 500 employees"	2004	"private"	"IT Services"	"Unknown / Non-Applicable"	2019-01-23 09:27:00
+"Colgate-Palmolive"	"www.colgatepalmolive.com"	"New York, NY"	"10000+ employees"	1806	"public"	"Consumer Products Manufacturing"	"$10+ billion (USD) per year"	2019-01-23 09:27:00
+"Condé Nast"	"www.condenast.co.uk"	"London, England (UK)"	"501 to 1000 employees"	1909	"public"	"Publishing"	"Unknown / Non-Applicable"	2019-01-23 09:27:00
+"DoorDash"	"www.doordash.com"	"San Francisco, CA"	"501 to 1000 employees"	2013	"private"	"Express Delivery Services"	"Unknown / Non-Applicable"	2019-01-23 09:27:00
+"Experian"	"www.experian.com"	"Dublin, Co. Dublin (Ireland)"	"10000+ employees"	1980	"public"	"Financial Analytics & Research"	"$2 to $5 billion (USD) per year"	2019-01-23 09:27:00
+"FanDuel"	"www.fanduel.com"	"New York, NY"	"501 to 1000 employees"	2009	"private"	"Sports & Recreation"	"$100 to $500 million (USD) per year"	2019-01-23 09:27:00
+"Macquarie Group"	"www.macquarie.com"	"Sydney (Australia)"	"10000+ employees"	1969	"public"	"Investment Banking & Asset Management"	"$5 to $10 billion (USD) per year"	2019-01-23 09:27:00
+"Movable Ink"	"www.movableink.com"	"New York, NY"	"51 to 200 employees"	2010	"private"	"Advertising & Marketing"	"Unknown / Non-Applicable"	2019-01-23 09:27:00
+"SeatGeek"	"www.seatgeek.com"	"New York, NY"	"201 to 500 employees"	2009	"private"	"Internet"	"Unknown / Non-Applicable"	2019-01-23 09:27:00
+"SoundCloud"	"www.soundcloud.com"	"Berlin (Germany)"	"201 to 500 employees"	2008	"private"	"Computer Hardware & Software"	"$10 to $25 million (USD) per year"	2019-01-23 09:27:00
+"TIBCO Software"	"www.tibco.com"	"Palo Alto, CA"	"1001 to 5000 employees"	1997	"private"	"Computer Hardware & Software"	"$1 to $2 billion (USD) per year"	2019-01-23 09:27:00
+"Tradeweb Markets LLC"	"www.tradeweb.com"	"New York, NY"	"501 to 1000 employees"	1997	"Subsidiary or Business Segment"	"Financial Transaction Processing"	"Unknown / Non-Applicable"	2019-01-23 09:27:00
+"Tudor Investment Corporation"	"www.tudor.com"	"Greenwich, CT"	"1 to 50 employees"	1980	"private"	"Investment Banking & Asset Management"	"$5 to $10 million (USD) per year"	2019-01-23 09:27:00
+"Twenty Recruitment Group"	"www.twentyrecruitment.com"	"London, England (UK)"	"51 to 200 employees"	2009	"private"	"Staffing & Outsourcing"	"$10 to $25 million (USD) per year"	2019-01-23 09:27:00
+"Ultimate Software"	"www.ultimatesoftware.com"	"Weston, FL"	"5001 to 10000 employees"	1990	"public"	"Enterprise Software & Network Solutions"	"$500 million to $1 billion (USD) per year"	2019-01-23 09:27:00

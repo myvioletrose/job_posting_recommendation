@@ -1,0 +1,16 @@
+"company"	"website"	"headquarters"	"size"	"founded"	"type"	"industry"	"revenue"	"run_time"
+"1stdibs.com"	"www.1stdibs.com"	"New York, NY"	"201 to 500 employees"	2001	"private"	"Internet"	"$25 to $50 million (USD) per year"	2019-01-25 14:24:48
+"Allianz Global Investors"	"www.allianzgi.com"	"London, England (UK)"	"1001 to 5000 employees"	2012	"Subsidiary or Business Segment"	"Investment Banking & Asset Management"	"Unknown / Non-Applicable"	2019-01-25 14:24:48
+"Experian"	"www.experian.com"	"Dublin, Co. Dublin (Ireland)"	"10000+ employees"	1980	"public"	"Financial Analytics & Research"	"$2 to $5 billion (USD) per year"	2019-01-25 14:24:48
+"Innovid"	"www.innovid.com"	"New York, NY"	"201 to 500 employees"	2007	"private"	"Advertising & Marketing"	"$50 to $100 million (USD) per year"	2019-01-25 14:24:48
+"Jackson Lewis"	"www.jacksonlewis.com"	"New York, NY"	"1001 to 5000 employees"	1957	"private"	"Legal"	"$50 to $100 million (USD) per year"	2019-01-25 14:24:48
+"Major League Baseball"	"www.mlb.com"	"New York, NY"	"201 to 500 employees"	1869	"private"	"Sports & Recreation"	"Unknown / Non-Applicable"	2019-01-25 14:24:48
+"Mark Paneth"	"www.markspaneth.com"	"New York, NY"	"501 to 1000 employees"	1907	"private"	"Accounting"	"$100 to $500 million (USD) per year"	2019-01-25 14:24:48
+"Movable Ink"	"www.movableink.com"	"New York, NY"	"51 to 200 employees"	2010	"private"	"Advertising & Marketing"	"Unknown / Non-Applicable"	2019-01-25 14:24:48
+"Ralph Lauren"	"www.ralphlauren.com"	"New York, NY"	"10000+ employees"	1967	"public"	"Other Retail Stores"	"$5 to $10 billion (USD) per year"	2019-01-25 14:24:48
+"Santander Bank"	"www.santanderbank.com"	"Boston, MA"	"5001 to 10000 employees"	1856	"private"	"Banks & Credit Unions"	"$500 million to $1 billion (USD) per year"	2019-01-25 14:24:48
+"SheKnows"	"www.shemedia.com"	"Scottsdale, AZ"	"51 to 200 employees"	2003	"private"	"Publishing"	"$50 to $100 million (USD) per year"	2019-01-25 14:24:48
+"SoundCloud"	"www.soundcloud.com"	"Berlin (Germany)"	"201 to 500 employees"	2008	"private"	"Computer Hardware & Software"	"$10 to $25 million (USD) per year"	2019-01-25 14:24:48
+"TravelClick"	"www.travelclick.com"	"New York, NY"	"1001 to 5000 employees"	1985	"private"	"Internet"	"$100 to $500 million (USD) per year"	2019-01-25 14:24:48
+"Tudor Investment Corporation"	"www.tudor.com"	"Greenwich, CT"	"1 to 50 employees"	1980	"private"	"Investment Banking & Asset Management"	"$5 to $10 million (USD) per year"	2019-01-25 14:24:48
+"Xpanxion"	"www.xpanxion.com"	"Alpharetta, GA"	"501 to 1000 employees"	1997	"private"	"IT Services"	"$50 to $100 million (USD) per year"	2019-01-25 14:24:48

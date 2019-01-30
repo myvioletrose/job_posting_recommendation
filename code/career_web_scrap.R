@@ -359,7 +359,7 @@ jpr <- merge(jobDf_agg, companyDf_agg, by = "company") %>%
         # filter job titles that are not relevant
         dplyr::filter(title %in% title[!grepl("(architect|software|engineer|director)", title, ignore.case = T)]) %>%
         # filter by job posting last_updated within past 14 days
-        dplyr::filter(last_updated > Sys.Date() -14) %>%
+        # dplyr::filter(last_updated > Sys.Date() -14) %>%
         # filter out duplicated jobListingId - this happens b/c same job with same Id can have different urls
         group_by(jobListingId) %>%
         dplyr::mutate(row = row_number()) %>%
@@ -369,6 +369,7 @@ jpr <- merge(jobDf_agg, companyDf_agg, by = "company") %>%
                website, headquarters, size, founded, type, industry, revenue, description) %>%
         arrange(company, title, last_updated) 
 
+View(jpr)
 
 
 

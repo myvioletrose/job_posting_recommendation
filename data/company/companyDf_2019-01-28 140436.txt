@@ -1,0 +1,13 @@
+"company"	"website"	"headquarters"	"size"	"founded"	"type"	"industry"	"revenue"	"run_time"
+"1stdibs.com"	"www.1stdibs.com"	"New York, NY"	"201 to 500 employees"	2001	"private"	"Internet"	"$25 to $50 million (USD) per year"	2019-01-28 14:04:36
+"Experian"	"www.experian.com"	"Dublin, Co. Dublin (Ireland)"	"10000+ employees"	1980	"public"	"Financial Analytics & Research"	"$2 to $5 billion (USD) per year"	2019-01-28 14:04:36
+"Experian Ltd"	"www.experian.com"	"Dublin, Co. Dublin (Ireland)"	"10000+ employees"	1980	"public"	"Financial Analytics & Research"	"$2 to $5 billion (USD) per year"	2019-01-28 14:04:36
+"Hospital for Special Surgery"	"www.hss.edu"	"New York, NY"	"1001 to 5000 employees"	1863	"Nonprofit Organization"	"Health Care Services & Hospitals"	"Unknown / Non-Applicable"	2019-01-28 14:04:36
+"Innovid"	"www.innovid.com"	"New York, NY"	"201 to 500 employees"	2007	"private"	"Advertising & Marketing"	"$50 to $100 million (USD) per year"	2019-01-28 14:04:36
+"Integral Ad Science"	"www.integralads.com"	"New York, NY"	"501 to 1000 employees"	2009	"private"	"Internet"	"$100 to $500 million (USD) per year"	2019-01-28 14:04:36
+"Major League Baseball"	"www.mlb.com"	"New York, NY"	"201 to 500 employees"	1869	"private"	"Sports & Recreation"	"Unknown / Non-Applicable"	2019-01-28 14:04:36
+"North Highland"	"www.northhighland.com"	"Atlanta, GA"	"1001 to 5000 employees"	1992	"private"	"Consulting"	"$100 to $500 million (USD) per year"	2019-01-28 14:04:36
+"OKCupid"	"www.okcupid.com"	"New York, NY"	"1 to 50 employees"	2003	"public"	"Internet"	"Unknown / Non-Applicable"	2019-01-28 14:04:36
+"SheKnows"	"www.shemedia.com"	"Scottsdale, AZ"	"51 to 200 employees"	2003	"private"	"Publishing"	"$50 to $100 million (USD) per year"	2019-01-28 14:04:36
+"Tudor Investment Corporation"	"www.tudor.com"	"Greenwich, CT"	"1 to 50 employees"	1980	"private"	"Investment Banking & Asset Management"	"$5 to $10 million (USD) per year"	2019-01-28 14:04:36
+"Zocdoc"	"www.zocdoc.com"	"New York, NY"	"501 to 1000 employees"	2007	"private"	"Internet"	"Unknown / Non-Applicable"	2019-01-28 14:04:36
