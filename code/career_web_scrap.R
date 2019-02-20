@@ -369,7 +369,7 @@ jpr <- merge(jobDf_agg, companyDf_agg, by = "company") %>%
                website, headquarters, size, founded, type, industry, revenue, description) %>%
         arrange(company, title, last_updated) 
 
-View(jpr)
+jpr %>% arrange(., desc(last_updated)) %>% View
 
 
 
