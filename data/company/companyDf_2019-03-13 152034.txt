@@ -1,0 +1,16 @@
+"company"	"website"	"headquarters"	"size"	"founded"	"type"	"industry"	"revenue"	"run_time"
+"1stdibs.com"	"www.1stdibs.com"	"New York, NY"	"201 to 500 employees"	2001	"private"	"Internet"	"$25 to $50 million (USD) per year"	2019-03-13 15:20:34
+"Asana"	"www.asana.com"	"San Francisco, CA"	"201 to 500 employees"	2009	"private"	"Enterprise Software & Network Solutions"	"$25 to $50 million (USD) per year"	2019-03-13 15:20:34
+"Bloomberg"	"www.bloomberg.com"	"New York, NY"	"10000+ employees"	1981	"private"	"Computer Hardware & Software"	"Unknown / Non-Applicable"	2019-03-13 15:20:34
+"Centene Corporation"	"www.centene.com"	"Saint Louis, MO"	"10000+ employees"	1984	"public"	"Insurance Carriers"	"$10+ billion (USD) per year"	2019-03-13 15:20:34
+"Clarity Insights"	"www.clarityinsights.com"	"Chicago, IL"	"201 to 500 employees"	2004	"private"	"IT Services"	"Unknown / Non-Applicable"	2019-03-13 15:20:34
+"Flatiron Health"	"www.flatiron.com"	"New York, NY"	"201 to 500 employees"	2012	"private"	"Enterprise Software & Network Solutions"	"Unknown / Non-Applicable"	2019-03-13 15:20:34
+"Integral Ad Science"	"www.integralads.com"	"New York, NY"	"501 to 1000 employees"	2009	"private"	"Internet"	"$100 to $500 million (USD) per year"	2019-03-13 15:20:34
+"Kepler Group"	"www.keplergrp.com"	"New York, NY"	"201 to 500 employees"	2012	"private"	"Advertising & Marketing"	"$25 to $50 million (USD) per year"	2019-03-13 15:20:34
+"Morgan Stanley"	"www.morganstanley.com"	"New York, NY"	"10000+ employees"	1935	"public"	"Investment Banking & Asset Management"	"$10+ billion (USD) per year"	2019-03-13 15:20:34
+"Premier, Inc."	"www.premierinc.com"	"Charlotte, NC"	"1001 to 5000 employees"	1996	"public"	"Health Care Services & Hospitals"	"$1 to $2 billion (USD) per year"	2019-03-13 15:20:34
+"Refinery29"	"www.refinery29.com"	"New York, NY"	"201 to 500 employees"	2005	"private"	"Publishing"	"Unknown / Non-Applicable"	2019-03-13 15:20:34
+"SeatGeek"	"www.seatgeek.com"	"New York, NY"	"201 to 500 employees"	2009	"private"	"Internet"	"Unknown / Non-Applicable"	2019-03-13 15:20:34
+"Tudor Investment Corporation"	"www.tudor.com"	"Greenwich, CT"	"1 to 50 employees"	1980	"private"	"Investment Banking & Asset Management"	"$5 to $10 million (USD) per year"	2019-03-13 15:20:34
+"WeWork"	"www.wework.com"	"New York, NY"	"1001 to 5000 employees"	2010	"private"	"Membership Organizations"	"Unknown / Non-Applicable"	2019-03-13 15:20:34
+"Williams-Sonoma Inc."	"www.williams-sonomainc.com"	"San Francisco, CA"	"10000+ employees"	1956	"public"	"Home Furniture & Housewares Stores"	"$5 to $10 billion (USD) per year"	2019-03-13 15:20:34

@@ -1,0 +1,15 @@
+"company"	"website"	"headquarters"	"size"	"founded"	"type"	"industry"	"revenue"	"run_time"
+"Amazon"	"www.amazon.jobs"	"Seattle, WA"	"10000+ employees"	1994	"public"	"Internet"	"$10+ billion (USD) per year"	2019-03-04 10:04:15
+"Dataminr"	"www.dataminr.com"	"New York, NY"	"201 to 500 employees"	2009	"private"	"Internet"	"Unknown / Non-Applicable"	2019-03-04 10:04:15
+"Industrious"	"www.industriousoffice.com"	"New York, NY"	"201 to 500 employees"	2013	"private"	"Membership Organizations"	"Unknown / Non-Applicable"	2019-03-04 10:04:15
+"Mediaocean"	"www.mediaocean.com"	"New York, NY"	"501 to 1000 employees"	1967	"private"	"Enterprise Software & Network Solutions"	"$100 to $500 million (USD) per year"	2019-03-04 10:04:15
+"Medidata Solutions"	"https://www.medidata.com/"	"New York, NY"	"1001 to 5000 employees"	1999	"public"	"Enterprise Software & Network Solutions"	"$500 million to $1 billion (USD) per year"	2019-03-04 10:04:15
+"Newsela"	"www.newsela.com"	"New York, NY"	"51 to 200 employees"	2013	"private"	"Internet"	"Unknown / Non-Applicable"	2019-03-04 10:04:15
+"NuWare Technology Corp"	"www.nuware.com"	"Iselin, NJ"	"51 to 200 employees"	1994	"private"	"IT Services"	"$10 to $25 million (USD) per year"	2019-03-04 10:04:15
+"ShopKeep"	"www.shopkeep.com"	"New York, NY"	"201 to 500 employees"	2008	"private"	"Computer Hardware & Software"	"Unknown / Non-Applicable"	2019-03-04 10:04:15
+"SoundCloud Ltd"	"www.soundcloud.com"	"Berlin (Germany)"	"201 to 500 employees"	2008	"private"	"Computer Hardware & Software"	"$10 to $25 million (USD) per year"	2019-03-04 10:04:15
+"Squarespace"	"www.squarespace.com"	"New York, NY"	"501 to 1000 employees"	2004	"private"	"Internet"	"Unknown / Non-Applicable"	2019-03-04 10:04:15
+"Walt Disney Company"	"www.disney.com"	"Burbank, CA"	"10000+ employees"	1923	"public"	"Motion Picture Production & Distribution"	"$10+ billion (USD) per year"	2019-03-04 10:04:15
+"Williams-Sonoma Inc."	"www.williams-sonomainc.com"	"San Francisco, CA"	"10000+ employees"	1956	"public"	"Home Furniture & Housewares Stores"	"$5 to $10 billion (USD) per year"	2019-03-04 10:04:15
+"Zocdoc"	"www.zocdoc.com"	"New York, NY"	"501 to 1000 employees"	2007	"private"	"Internet"	"Unknown / Non-Applicable"	2019-03-04 10:04:15
+"ZocDoc"	"www.zocdoc.com"	"New York, NY"	"501 to 1000 employees"	2007	"private"	"Internet"	"Unknown / Non-Applicable"	2019-03-04 10:04:15

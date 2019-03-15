@@ -1,0 +1,14 @@
+"company"	"website"	"headquarters"	"size"	"founded"	"type"	"industry"	"revenue"	"run_time"
+"1stdibs.com"	"www.1stdibs.com"	"New York, NY"	"201 to 500 employees"	2001	"private"	"Internet"	"$25 to $50 million (USD) per year"	2019-03-15 09:09:35
+"Barclays"	"www.barclays.com"	"London, England (UK)"	"10000+ employees"	1690	"public"	"Banks & Credit Unions"	"$10+ billion (USD) per year"	2019-03-15 09:09:35
+"Bloomberg L.P."	"www.bloomberg.com"	"New York, NY"	"10000+ employees"	1981	"private"	"Computer Hardware & Software"	"Unknown / Non-Applicable"	2019-03-15 09:09:35
+"Centene Corporation"	"www.centene.com"	"Saint Louis, MO"	"10000+ employees"	1984	"public"	"Insurance Carriers"	"$10+ billion (USD) per year"	2019-03-15 09:09:35
+"IntraEdge"	"www.intraedge.com"	"Chandler, AZ"	"501 to 1000 employees"	2002	"private"	"IT Services"	"$50 to $100 million (USD) per year"	2019-03-15 09:09:35
+"Kepler Group"	"www.keplergrp.com"	"New York, NY"	"201 to 500 employees"	2012	"private"	"Advertising & Marketing"	"$25 to $50 million (USD) per year"	2019-03-15 09:09:35
+"Penske Media Corporation"	"www.pmc.com"	"Los Angeles, CA"	"501 to 1000 employees"	2003	"private"	"Publishing"	"Unknown / Non-Applicable"	2019-03-15 09:09:35
+"Phreesia"	"www.phreesia.com"	"New York, NY"	"201 to 500 employees"	2005	"private"	"Health Care Services & Hospitals"	"Unknown / Non-Applicable"	2019-03-15 09:09:35
+"Refinery29"	"www.refinery29.com"	"New York, NY"	"201 to 500 employees"	2005	"private"	"Publishing"	"Unknown / Non-Applicable"	2019-03-15 09:09:35
+"The Estée Lauder Companies Inc."	"www.elcompanies.com"	"New York, NY"	"10000+ employees"	1946	"public"	"Consumer Products Manufacturing"	"$10+ billion (USD) per year"	2019-03-15 09:09:35
+"UncommonGoods"	"www.uncommongoods.com"	"Brooklyn, NY"	"201 to 500 employees"	1999	"private"	"Gift, Novelty & Souvenir Stores"	"$10 to $25 million (USD) per year"	2019-03-15 09:09:35
+"WeWork"	"www.wework.com"	"New York, NY"	"1001 to 5000 employees"	2010	"private"	"Membership Organizations"	"Unknown / Non-Applicable"	2019-03-15 09:09:35
+"Williams-Sonoma Inc."	"www.williams-sonomainc.com"	"San Francisco, CA"	"10000+ employees"	1956	"public"	"Home Furniture & Housewares Stores"	"$5 to $10 billion (USD) per year"	2019-03-15 09:09:35
