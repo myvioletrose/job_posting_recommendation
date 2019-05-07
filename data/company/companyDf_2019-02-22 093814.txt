@@ -1,3 +1,0 @@
-"company"	"website"	"headquarters"	"size"	"founded"	"type"	"industry"	"revenue"	"run_time"
-"Allianz Global Investors"	"www.allianzgi.com"	"London, England (UK)"	"1001 to 5000 employees"	2012	"Subsidiary or Business Segment"	"Investment Banking & Asset Management"	"Unknown / Non-Applicable"	2019-02-22 09:38:14
-"Jackson Lewis"	"www.jacksonlewis.com"	"New York, NY"	"1001 to 5000 employees"	1957	"private"	"Legal"	"$50 to $100 million (USD) per year"	2019-02-22 09:38:14

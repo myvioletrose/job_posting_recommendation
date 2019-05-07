@@ -1,3 +1,0 @@
-"company"	"website"	"headquarters"	"size"	"founded"	"type"	"industry"	"revenue"	"run_time"
-"Allianz Global Investors"	"www.allianzgi.com"	"London, England (UK)"	"1001 to 5000 employees"	2012	"Subsidiary or Business Segment"	"Investment Banking & Asset Management"	"Unknown / Non-Applicable"	2019-02-21 13:55:05
-"Nasdaq"	"business.nasdaq.com"	"New York, NY"	"1001 to 5000 employees"	1971	"public"	"Stock Exchanges"	"$2 to $5 billion (USD) per year"	2019-02-21 13:55:05

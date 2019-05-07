@@ -1,2 +1,0 @@
-"company"	"website"	"headquarters"	"size"	"founded"	"type"	"industry"	"revenue"	"run_time"
-"SoundCloud"	"www.soundcloud.com"	"Berlin (Germany)"	"201 to 500 employees"	2008	"private"	"Computer Hardware & Software"	"$10 to $25 million (USD) per year"	2019-02-12 17:02:05

@@ -1,5 +1,0 @@
-"company"	"website"	"headquarters"	"size"	"founded"	"type"	"industry"	"revenue"	"run_time"
-"Anheuser-Busch InBev"	"www.ab-inbev.com"	"Leuven (Belgium)"	"10000+ employees"	1852	"public"	"Food & Beverage Manufacturing"	"$10+ billion (USD) per year"	2019-02-13 17:23:44
-"Compass"	"www.compass.com"	"New York, NY"	"1001 to 5000 employees"	2012	"private"	"Enterprise Software & Network Solutions"	"$500 million to $1 billion (USD) per year"	2019-02-13 17:23:44
-"Nasdaq"	"business.nasdaq.com"	"New York, NY"	"1001 to 5000 employees"	1971	"public"	"Stock Exchanges"	"$2 to $5 billion (USD) per year"	2019-02-13 17:23:44
-"SoundCloud"	"www.soundcloud.com"	"Berlin (Germany)"	"201 to 500 employees"	2008	"private"	"Computer Hardware & Software"	"$10 to $25 million (USD) per year"	2019-02-13 17:23:44
