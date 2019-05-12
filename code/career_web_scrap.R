@@ -14,7 +14,7 @@ if(!require(Hmisc)){install.packages("Hmisc"); require(Hmisc)}
 if(!require(tidytext)){install.packages("tidytext"); require(tidytext)}
 if(!require(tm)){install.packages("tm"); require(tm)}
 if(!require(e1071)){install.packages("e1071"); require(e1071)}
-if(!require(pROC)){install.packages("ROCR"); require(ROCR)}
+if(!require(pROC)){install.packages("pROC"); require(pROC)}
 if(!require(wordcloud)){install.packages("wordcloud"); require(wordcloud)}
 
 
@@ -397,11 +397,13 @@ jpr %>% arrange(., desc(last_updated)) %>% View
 #                       industry = as.factor(industry),
 #                       revenue = as.factor(revenue))
 
-setwd("../"); setwd("data")
-newDf <- read.table("newDf.csv", header = T) 
+# setwd("../"); setwd("data")
+# newDf <- read.table("newDf.csv", header = T, stringsAsFactors = T)
+newDf <- read.table("https://raw.githubusercontent.com/myvioletrose/job_posting_recommendation/master/data/newDf.csv", header = T, stringsAsFactors = T)
+newDf <- newDf %>% dplyr::mutate(description = as.character(description))
 str(newDf)
 
-setwd("../"); setwd("code")
+# setwd(currentwd)
 
 # create description data frame for text mining
 description <- newDf %>% dplyr::select(jobListingId, flag, description)
@@ -427,7 +429,7 @@ descriptionClean <- tm_map(descriptionClean, removePunctuation)
 
 # convert it into a dtm (row per document, column per word)
 dtm <- DocumentTermMatrix(descriptionClean)
-inspect(dtm)
+# inspect(dtm)
 
 # set frequency filter, i.e. only include words that appear f or more times in the whole corpus
 f = 10
@@ -505,7 +507,7 @@ plot(fit_lr_pred_roc, main = "ROC curve of logistic regression model")
 ############### step 10 : Word Cloud ###############
 ####################################################
 
-### let's visualize solely jobs that I am interested in using word cloud
+### let's visualize solely jobs that I am interested in by using word cloud
 
 ####### overall word cloud #######
 
@@ -536,11 +538,12 @@ clean.text = function(x)
 overall <- tm::Corpus(VectorSource(description$description[description$flag == 1])) %>%
         clean.text 
 
-set.seed(8321)
+set.seed(1234)
 wordcloud(overall, 
           min.freq = 30, 
-          colors = brewer.pal(8, "RdBu"))
-
+          colors = brewer.pal(8, "RdBu"),
+          scale = c(9, .7))
+# savePlot(filename = "word_cloud.png", type = "png")
 
 ####### comparison cloud #######
 
@@ -562,13 +565,14 @@ tdm <- TermDocumentMatrix(all) %>% as.matrix
 colnames(tdm) <- c("Interested", "Not Interested")
 
 # comparison cloud #
-set.seed(8321)
+set.seed(1234)
 comparison.cloud(tdm, 
                  title.size = 1,
                  random.order = FALSE, 
                  # colors = c("#00B2FF", "red", "#FF0099", "#6600CC"),
                  colors = c("#00B2FF", "#6600CC"),
-                 max.words = 200)
+                 max.words = 200,
+                 scale = c(8, .2))
 
 # savePlot(filename = "comparison_cloud.png", type = "png")
 
