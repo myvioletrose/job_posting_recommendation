@@ -14,9 +14,9 @@ Part II, I perform a simple change-data-capture (CDC). Above steps describe a si
 
 Part III, I start to anaylze data here. First, I manually review the data that I collect. In this case, I have collected 200 jobs. Each of these is reviewed and flagged (1/0) - whether I would be interested in it or not. Subsequently, I load the data (jobListingId, flag) back and merge it with the jpr data frame to form a new data frame, i.e. newDf. I clean the job description and turn it into a document term matrix (dtm). I split the newDf into train and test sets. I combine the dtm with other quantitative variables that I collect for each job. These variables include estimated salary, company review (from 0 to 5), company size, and revenue. I need to drop "industry" because I do not have a big enough data set, i.e. some industries included in the train set cannot be found in the test set, thus a classification model built using the train set would fail to apply on a test set. At the end, I build a logistic regression model using these quantitative variables along with the job descriptions turned into a dtm (I set a criterion - only words appear 10 times or more in the corpus of job descriptions would be included in the final classification model). The results indicate sensitivity is 60%, specificity is 70%, precision is 28.6% and total accuracy is 68.3%. Various algorithm is also tried, including support-vector-machine (SVM) and Naive Bayes, but both perform very poorly and not included for display here. A larger data set is recommended. 
 
-Part IV, I visualize the job descriptions using word cloud. I create a single word cloud featuring jobs that I am interested in, and also I create a comparison cloud to features jobs that I am interested in, versus jobs that I am not. The visualization is satisfying, especially the comparison cloud can tease out keywords from the two separate corpuses. 
+Part IV, I visualize the job descriptions using word cloud. I create a single word cloud featuring jobs that I am interested in, and also I create a comparison cloud to feature and compare jobs that I am interested in versus jobs that I am not. The visualization is satisfying, especially the comparison cloud can tease out keywords from the two separate corpuses. 
 
-Part V, finally, I demonstrate how to send an email notification. In theory, I can classify jobs that I am potentially interested in (by applying the model to the jobs that I scrap daily or weekly), and then send a notification with attachment(s) via email to myself. This step is omitted and not shown here, because I have not collected large enough data set to provide/develop any useful recommendation/notification. Example of seting up an email with attachment is shown here (without username or password displayed). In addition, I need to create a simple task.bat file to tell Windows where to find and run my script when I set up the Task Scheduler.
+Part V, finally, I demonstrate how to send out an email notification in R. In theory, I can classify jobs that I am potentially interested in (by applying the model to the jobs that I scrap daily or weekly), and then send a notification with attachment(s) via email to myself. This step is omitted and not shown here, because I have not collected large enough data set to provide/develop any useful model for job recommendation. Example of seting up an email with attachment is shown here (without username or password displayed). In addition, I need to create a simple task.bat file to instruct Windows where to find and run my script when I set up the Task Scheduler.
 
 
  
@@ -626,10 +626,9 @@ knitr::include_graphics("comparison_cloud.png")
 ```
 
 The comparison cloud is pretty accurate. I am more interested in insights, marketing, analytics, python, experienced in visualization (such as Looker and Tableau are both displayed on top), whereas I am less interested in finance, investment, banking or management (or manager role), and it's correct that I don't have any experience in microstrategy, software implementation, design or integration.
-***
 
 
-### PART IV : SET UP { .tabset}
+### PART V : SET UP { .tabset}
 
 #### Step 11 : email notification
 ```{r step_11, eval = F}

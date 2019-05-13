@@ -380,206 +380,206 @@ jpr %>% arrange(., desc(last_updated)) %>% View
 # output into txt, for manually review
 # write.table(jpr, file = "output.txt", row.names = F)
 
-
-####################################################################################
-################################# ANALYSIS BEGINS! #################################
-########### step 6 : review jobs, flag out those that I am interested in ###########
-####################################################################################
-
-# manully go through the short list (200 jobs) - flag out those that I am interested in
-# merge it back and create a new data frame (newDf) for modeling
-# flag_job_id <- readit("flag_job_id.xlsx")  # has only two columns, i.e. jobListingId, flag
-# newDf <- merge(flag_job_id, jpr) %>%
-#         # select columns that I need for modeling
-#         dplyr::select(jobListingId, flag, salary_est, review,
-#                       size, industry, revenue, description) %>%
-#         dplyr::mutate(size = as.factor(size),
-#                       industry = as.factor(industry),
-#                       revenue = as.factor(revenue))
-
-# setwd("../"); setwd("data")
-# newDf <- read.table("newDf.csv", header = T, stringsAsFactors = T)
-newDf <- read.table("https://raw.githubusercontent.com/myvioletrose/job_posting_recommendation/master/data/newDf.csv", header = T, stringsAsFactors = T)
-newDf <- newDf %>% dplyr::mutate(description = as.character(description))
-str(newDf)
-
-# setwd(currentwd)
-
-# create description data frame for text mining
-description <- newDf %>% dplyr::select(jobListingId, flag, description)
-table(description$flag)  # I am interested in 60 out of 200 jobs scrapped from glassdoor
-
-### the goal is to combine quantitative variables (like estimated salary, company revenue) with text description of a job to predict my potential interest in a job!
-
-
-######################################        
-######## step 7 : text mining ########         
-######################################
-
-### cleanup steps ###
-
-# first put the corpus in tm format
-descriptionClean <- Corpus(VectorSource(description$description))
-
-# clean up
-descriptionClean <- tm_map(descriptionClean, content_transformer(tolower))
-descriptionClean <- tm_map(descriptionClean, removeWords, stopwords())
-descriptionClean <- tm_map(descriptionClean, stripWhitespace)
-descriptionClean <- tm_map(descriptionClean, removePunctuation)
-
-# convert it into a dtm (row per document, column per word)
-dtm <- DocumentTermMatrix(descriptionClean)
-# inspect(dtm)
-
-# set frequency filter, i.e. only include words that appear f or more times in the whole corpus
-f = 10
-features <- findFreqTerms(dtm, f)
-
-#####################################################
-##### step 8 : split into train, test data sets #####
-#####################################################
-
-# set index : split by 70% vs 30%
-set.seed(1234)
-index <- sample(1:dim(description)[1], .7 * dim(description)[1])
-
-# step 1 : split original corpus into train and test sets, each set contains the "flag" (dependent variable)
-train_step_1 <- description[index, ]
-test_step_1 <- description[-index, ]
-
-# step 2 : dummify the "term" (or word) columns
-train_step_2 <- descriptionClean[index] %>% 
-        DocumentTermMatrix(., list(global = c(2, Inf), dictionary = features)) %>%
-        apply(MARGIN = 2, function(x) x <- ifelse(x >0, 1, 0)) %>%
-        as.data.frame
-
-test_step_2 <- descriptionClean[-index] %>% 
-        DocumentTermMatrix(., list(global = c(2, Inf), dictionary = features)) %>%
-        apply(MARGIN = 2, function(x) x <- ifelse(x >0, 1, 0)) %>%
-        as.data.frame
-
-# step 3 : put step 1 and 2 together
-train <- cbind(flag = factor(train_step_1$flag), 
-               jobListingId = train_step_1$jobListingId,
-               train_step_2) %>% as.data.frame
-
-test <- cbind(flag = factor(test_step_1$flag), 
-              jobListingId = test_step_1$jobListingId,
-              test_step_2) %>% as.data.frame
-
-# FINAL step : merge back with newDf
-# minus "industry" because we don't collect enough data
-# the train data set is missing some industries in the test data set
-newDf_train_subset <- newDf[index, ] %>% select(-c(description, flag, industry))
-newDf_test_subset <- newDf[-index, ] %>% select(-c(description, flag, industry))
-
-train <- merge(train, newDf_train_subset, by = "jobListingId") %>% dplyr::select(-jobListingId)
-test <- merge(test, newDf_test_subset, by = "jobListingId") %>% dplyr::select(-jobListingId)
-
-
-##############################################################
-############### step 9 : classification models ###############
-##############################################################
-
-#######################
-# Logistic Regression #
-#######################
-
-# build a model
-fit_lr <- glm(flag ~., train, family = "binomial")  # summary(fit_lr)
-
-# fit a prediction
-fit_lr_pred <- predict(fit_lr, newdata = test[, -1], type = "response")
-
-# classification outcome
-ftable(test$flag, fit_lr_pred > 0.5) -> table_lr
-table_lr
-
-table_lr %>% prop.table(., margin = 1)*100 -> accuracy_lr
-round(accuracy_lr, 1)
-
-# ROC curve
-fit_lr_pred_roc <- roc(flag ~ fit_lr_pred, data = test)
-plot(fit_lr_pred_roc, main = "ROC curve of logistic regression model")
-
-
-####################################################
-############### step 10 : Word Cloud ###############
-####################################################
-
-### let's visualize solely jobs that I am interested in by using word cloud
-
-####### overall word cloud #######
-
-# clean text first
-clean.text = function(x)
-{
-        # tolower
-        x = tolower(x)
-        # remove rt
-        x = gsub("rt", "", x)
-        # remove at
-        x = gsub("@\\w+", "", x)
-        # remove punctuation
-        x = gsub("[[:punct:]]", "", x)
-        # remove numbers
-        x = gsub("[[:digit:]]", "", x)
-        # remove links http
-        x = gsub("http\\w+", "", x)
-        # remove tabs
-        x = gsub("[ |\t]{2,}", "", x)
-        # remove blank spaces at the beginning
-        x = gsub("^ ", "", x)
-        # remove blank spaces at the end
-        x = gsub(" $", "", x)
-        return(x)
-}
-
-overall <- tm::Corpus(VectorSource(description$description[description$flag == 1])) %>%
-        clean.text 
-
-set.seed(1234)
-wordcloud(overall, 
-          min.freq = 30, 
-          colors = brewer.pal(8, "RdBu"),
-          scale = c(9, .7))
-# savePlot(filename = "word_cloud.png", type = "png")
-
-####### comparison cloud #######
-
-# clean, transform into tdm first
-interested <- description %>% filter(flag == 1) %>% select(description) %>% 
-        clean.text %>%
-        paste(., collapse = " ")
-
-not_interested <- description %>% filter(flag == 0) %>% select(description) %>% 
-        clean.text %>%
-        paste(., collapse = " ")
-
-all <- c(interested, not_interested) %>%
-        removeWords(., c(stopwords("english"))) %>%
-        VectorSource %>%
-        Corpus
-
-tdm <- TermDocumentMatrix(all) %>% as.matrix
-colnames(tdm) <- c("Interested", "Not Interested")
-
-# comparison cloud #
-set.seed(1234)
-comparison.cloud(tdm, 
-                 title.size = 1,
-                 random.order = FALSE, 
-                 # colors = c("#00B2FF", "red", "#FF0099", "#6600CC"),
-                 colors = c("#00B2FF", "#6600CC"),
-                 max.words = 200,
-                 scale = c(8, .2))
-
-# savePlot(filename = "comparison_cloud.png", type = "png")
-
-# save final df output
-# write.table(newDf, "newDf.csv", row.names = F, append = F)
-# df <- read.table("newDf.csv", header = T)
-
+# 
+# ####################################################################################
+# ################################# ANALYSIS BEGINS! #################################
+# ########### step 6 : review jobs, flag out those that I am interested in ###########
+# ####################################################################################
+# 
+# # manully go through the short list (200 jobs) - flag out those that I am interested in
+# # merge it back and create a new data frame (newDf) for modeling
+# # flag_job_id <- readit("flag_job_id.xlsx")  # has only two columns, i.e. jobListingId, flag
+# # newDf <- merge(flag_job_id, jpr) %>%
+# #         # select columns that I need for modeling
+# #         dplyr::select(jobListingId, flag, salary_est, review,
+# #                       size, industry, revenue, description) %>%
+# #         dplyr::mutate(size = as.factor(size),
+# #                       industry = as.factor(industry),
+# #                       revenue = as.factor(revenue))
+# 
+# # setwd("../"); setwd("data")
+# # newDf <- read.table("newDf.csv", header = T, stringsAsFactors = T)
+# newDf <- read.table("https://raw.githubusercontent.com/myvioletrose/job_posting_recommendation/master/data/newDf.csv", header = T, stringsAsFactors = T)
+# newDf <- newDf %>% dplyr::mutate(description = as.character(description))
+# str(newDf)
+# 
+# # setwd(currentwd)
+# 
+# # create description data frame for text mining
+# description <- newDf %>% dplyr::select(jobListingId, flag, description)
+# table(description$flag)  # I am interested in 60 out of 200 jobs scrapped from glassdoor
+# 
+# ### the goal is to combine quantitative variables (like estimated salary, company revenue) with text description of a job to predict my potential interest in a job!
+# 
+# 
+# ######################################        
+# ######## step 7 : text mining ########         
+# ######################################
+# 
+# ### cleanup steps ###
+# 
+# # first put the corpus in tm format
+# descriptionClean <- Corpus(VectorSource(description$description))
+# 
+# # clean up
+# descriptionClean <- tm_map(descriptionClean, content_transformer(tolower))
+# descriptionClean <- tm_map(descriptionClean, removeWords, stopwords())
+# descriptionClean <- tm_map(descriptionClean, stripWhitespace)
+# descriptionClean <- tm_map(descriptionClean, removePunctuation)
+# 
+# # convert it into a dtm (row per document, column per word)
+# dtm <- DocumentTermMatrix(descriptionClean)
+# # inspect(dtm)
+# 
+# # set frequency filter, i.e. only include words that appear f or more times in the whole corpus
+# f = 10
+# features <- findFreqTerms(dtm, f)
+# 
+# #####################################################
+# ##### step 8 : split into train, test data sets #####
+# #####################################################
+# 
+# # set index : split by 70% vs 30%
+# set.seed(1234)
+# index <- sample(1:dim(description)[1], .7 * dim(description)[1])
+# 
+# # step 1 : split original corpus into train and test sets, each set contains the "flag" (dependent variable)
+# train_step_1 <- description[index, ]
+# test_step_1 <- description[-index, ]
+# 
+# # step 2 : dummify the "term" (or word) columns
+# train_step_2 <- descriptionClean[index] %>% 
+#         DocumentTermMatrix(., list(global = c(2, Inf), dictionary = features)) %>%
+#         apply(MARGIN = 2, function(x) x <- ifelse(x >0, 1, 0)) %>%
+#         as.data.frame
+# 
+# test_step_2 <- descriptionClean[-index] %>% 
+#         DocumentTermMatrix(., list(global = c(2, Inf), dictionary = features)) %>%
+#         apply(MARGIN = 2, function(x) x <- ifelse(x >0, 1, 0)) %>%
+#         as.data.frame
+# 
+# # step 3 : put step 1 and 2 together
+# train <- cbind(flag = factor(train_step_1$flag), 
+#                jobListingId = train_step_1$jobListingId,
+#                train_step_2) %>% as.data.frame
+# 
+# test <- cbind(flag = factor(test_step_1$flag), 
+#               jobListingId = test_step_1$jobListingId,
+#               test_step_2) %>% as.data.frame
+# 
+# # FINAL step : merge back with newDf
+# # minus "industry" because we don't collect enough data
+# # the train data set is missing some industries in the test data set
+# newDf_train_subset <- newDf[index, ] %>% select(-c(description, flag, industry))
+# newDf_test_subset <- newDf[-index, ] %>% select(-c(description, flag, industry))
+# 
+# train <- merge(train, newDf_train_subset, by = "jobListingId") %>% dplyr::select(-jobListingId)
+# test <- merge(test, newDf_test_subset, by = "jobListingId") %>% dplyr::select(-jobListingId)
+# 
+# 
+# ##############################################################
+# ############### step 9 : classification models ###############
+# ##############################################################
+# 
+# #######################
+# # Logistic Regression #
+# #######################
+# 
+# # build a model
+# fit_lr <- glm(flag ~., train, family = "binomial")  # summary(fit_lr)
+# 
+# # fit a prediction
+# fit_lr_pred <- predict(fit_lr, newdata = test[, -1], type = "response")
+# 
+# # classification outcome
+# ftable(test$flag, fit_lr_pred > 0.5) -> table_lr
+# table_lr
+# 
+# table_lr %>% prop.table(., margin = 1)*100 -> accuracy_lr
+# round(accuracy_lr, 1)
+# 
+# # ROC curve
+# fit_lr_pred_roc <- roc(flag ~ fit_lr_pred, data = test)
+# plot(fit_lr_pred_roc, main = "ROC curve of logistic regression model")
+# 
+# 
+# ####################################################
+# ############### step 10 : Word Cloud ###############
+# ####################################################
+# 
+# ### let's visualize solely jobs that I am interested in by using word cloud
+# 
+# ####### overall word cloud #######
+# 
+# # clean text first
+# clean.text = function(x)
+# {
+#         # tolower
+#         x = tolower(x)
+#         # remove rt
+#         x = gsub("rt", "", x)
+#         # remove at
+#         x = gsub("@\\w+", "", x)
+#         # remove punctuation
+#         x = gsub("[[:punct:]]", "", x)
+#         # remove numbers
+#         x = gsub("[[:digit:]]", "", x)
+#         # remove links http
+#         x = gsub("http\\w+", "", x)
+#         # remove tabs
+#         x = gsub("[ |\t]{2,}", "", x)
+#         # remove blank spaces at the beginning
+#         x = gsub("^ ", "", x)
+#         # remove blank spaces at the end
+#         x = gsub(" $", "", x)
+#         return(x)
+# }
+# 
+# overall <- tm::Corpus(VectorSource(description$description[description$flag == 1])) %>%
+#         clean.text 
+# 
+# set.seed(1234)
+# wordcloud(overall, 
+#           min.freq = 30, 
+#           colors = brewer.pal(8, "RdBu"),
+#           scale = c(9, .7))
+# # savePlot(filename = "word_cloud.png", type = "png")
+# 
+# ####### comparison cloud #######
+# 
+# # clean, transform into tdm first
+# interested <- description %>% filter(flag == 1) %>% select(description) %>% 
+#         clean.text %>%
+#         paste(., collapse = " ")
+# 
+# not_interested <- description %>% filter(flag == 0) %>% select(description) %>% 
+#         clean.text %>%
+#         paste(., collapse = " ")
+# 
+# all <- c(interested, not_interested) %>%
+#         removeWords(., c(stopwords("english"))) %>%
+#         VectorSource %>%
+#         Corpus
+# 
+# tdm <- TermDocumentMatrix(all) %>% as.matrix
+# colnames(tdm) <- c("Interested", "Not Interested")
+# 
+# # comparison cloud #
+# set.seed(1234)
+# comparison.cloud(tdm, 
+#                  title.size = 1,
+#                  random.order = FALSE, 
+#                  # colors = c("#00B2FF", "red", "#FF0099", "#6600CC"),
+#                  colors = c("#00B2FF", "#6600CC"),
+#                  max.words = 200,
+#                  scale = c(8, .2))
+# 
+# # savePlot(filename = "comparison_cloud.png", type = "png")
+# 
+# # save final df output
+# # write.table(newDf, "newDf.csv", row.names = F, append = F)
+# # df <- read.table("newDf.csv", header = T)
+# 
 
 
 
